@@ -1,0 +1,47 @@
+Java Script does not wait by default
+  Problem: Queries like DB/file/ network calls take time
+
+Example: 
+    console.log("Start");
+    setTimeout(() => console.log("Done"), 2000);
+    console.log("End");
+
+Output:
+    Start
+    End
+    Done
+
+JS didnt wait
+
+POOL
+  PostgreSQL connection manager
+  Keeps multiple DB connections ready
+
+  pool.query("SELECT * from house") // This passes a SQL query to PostgreSQL
+    Return a PROMISE (placeholder for a value that will exist later)
+
+ASYNC
+  Means This function will do time-taking work and may pause
+  IT will ALWAYS return a PROMISE
+
+AWAIT
+  Wait here until this promise finishes, then continue
+
+NOTE : Await can only be used inside async 
+eg.
+  app.post("/patient",async (req, res) =>{
+    await pool.query()
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
