@@ -85,7 +85,7 @@ Login → View Records → View / Download QR
 
 ### Database
 
-* Postgres (UUID-based patient records)
+* PostgresSQL (UUID-based patient records)
 
 ### AI / Processing
 
@@ -104,7 +104,20 @@ Login → View Records → View / Download QR
 
 
 ## Screenshots
+### Login Portal
+![Portal](screenshots/Login_Page.png)
 
+### Doctor Portal
+![Doctor Portal](screenshots/Doctor_Portal.png)
+
+### Add Patient Modal
+![Add Patient](screenshots/All_Patients.png)
+
+### Nurse QR Scanner
+![Nurse Scanner](screenshots/Scan_Upload.png)
+
+### Patient Portal
+![Patient Portal](screenshots/Patient.png)
 
 
 ---
@@ -116,4 +129,101 @@ Inspired by real-world hospital workflows and modern digital healthcare systems.
 
 ---
 
+## Running the Project Locally
+
+Follow the steps below **in order** to run the application successfully.
+
 ---
+
+### 🔹 Prerequisites
+
+Make sure you have the following installed:
+
+* **Node.js** (v18 or later recommended)
+* **npm**
+* **Python 3.8+**
+* **PostgreSQL** (configured and running)
+
+---
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Dhiya-Natarajan/MedQR.git
+cd MedQR
+```
+
+---
+
+### Step 2: Install Dependencies
+
+#### Backend (Root Project)
+
+```bash
+npm install
+```
+
+#### Frontend
+
+```bash
+cd front-end
+npm install
+```
+
+---
+
+### Step 3: Start the Python OCR Server (IMPORTANT)
+
+Before starting the frontend and backend, you must run the **Python OCR server**. This is for converting images to raw text
+
+```bash
+cd Python
+python OCR_server.py
+```
+
+Keep this terminal **running**.
+
+---
+
+### Step 4: Start the Backend Server
+
+Open a **new terminal**, go to the **root project directory**, and run:
+
+```bash
+npm run dev
+```
+
+---
+
+### Step 5: Start the Frontend Server
+
+Open **another terminal**, navigate to the frontend folder, and run:
+
+```bash
+cd front-end
+npm run dev
+```
+
+---
+
+### Step 6: Access the Application
+
+* **Frontend:** [http://localhost:5173](http://localhost:5173)
+* **Backend API:** [http://localhost:3000](http://localhost:3000)
+* **Python OCR Server:** running locally (as started in Step 3)
+
+---
+
+### Important Notes
+
+* The **Python OCR server must be running** before uploading medical images.
+* Keep **all three servers running simultaneously**:
+
+  * Python OCR server
+  * Node.js backend
+  * React frontend
+* Stop servers using **Ctrl + C** in their respective terminals.
+
+---
+
+
